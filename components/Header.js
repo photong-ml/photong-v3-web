@@ -20,7 +20,7 @@ const Header = () => {
     ];
 
     return (
-        <Pane is="nav" position="sticky" top={0} border display="flex" padding={16} background="white" zIndex={2}>
+        <Pane is="nav" position="sticky" top={0} display="flex" padding={16} background="tint1" zIndex={2} >
             <Pane flex={1} alignItems="center" display="flex">
                 <Heading marginRight={majorScale(3)}>Photong </Heading>
                 <Pane>

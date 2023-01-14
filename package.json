@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "evergreen-ui": "^6.13.2",
+    "howler": "^2.2.3",
     "next": "13.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"

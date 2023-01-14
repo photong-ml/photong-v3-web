@@ -1,7 +1,7 @@
 import React from 'react';
 import { Pane, FileUploader, FileCard, Button, MusicIcon } from 'evergreen-ui';
 
-export default function ImageUpload( {marginTop, setUploaded, files, setFiles} ) {
+export default function ImageUpload( {marginTop, files, setFiles, generateAudio } ) {
     const [fileRejections, setFileRejections] = React.useState([])
     const handleChange = React.useCallback((files) => setFiles([files[0]]), [])
     const handleRejected = React.useCallback((fileRejections) => setFileRejections([fileRejections[0]]), [])
@@ -9,16 +9,7 @@ export default function ImageUpload( {marginTop, setUploaded, files, setFiles} )
         setFiles([])
         setFileRejections([])
     }, [])
-    const [loading, setLoading] = React.useState(false);
 
-    const handleSubmit = async () => {
-        setLoading(true);
-        // TODO: await submit to api
-        // TODO: handle error
-        // TODO: hand file to index.js
-        setLoading(false);
-        setUploaded(true);
-    }
 
     return (
         <Pane width='100%' marginTop={marginTop}>
@@ -29,7 +20,7 @@ export default function ImageUpload( {marginTop, setUploaded, files, setFiles} )
                 maxFiles={1}
                 onChange={handleChange}
                 onRejected={handleRejected}
-                acceptedMimeTypes={["image/png", "image/jpeg"]}
+                acceptedMimeTypes={["image/png", "image/jpeg", "image/webp"]}
                 renderFile={(file) => {
                     const { name, size, type } = file
                     const fileRejection = fileRejections.find((fileRejection) => fileRejection.file === file)
@@ -47,8 +38,7 @@ export default function ImageUpload( {marginTop, setUploaded, files, setFiles} )
                                 src={URL.createObjectURL(file)}
                             />
                             <Button 
-                                onClick={handleSubmit} 
-                                isLoading={loading} 
+                                onClick={generateAudio} 
                                 iconBefore={MusicIcon} 
                                 appearance="primary" 
                                 marginTop={16}
