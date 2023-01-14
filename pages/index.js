@@ -1,13 +1,18 @@
 import Head from 'next/head';
+import React from 'react';
 
 import Header from '../components/Header';
 import Intro from '../components/Intro';
+import Player from '../components/Player';
 
 import ImageUpload from '../components/ImageUpload';
 
 import { Pane, } from 'evergreen-ui';
 
 export default function Home() {
+    const [uploaded, setUploaded] = React.useState(false);
+    const [images, setImages] = React.useState([])
+
     return (
         <Pane width='100vw' height='100vh'>
             <Head>
@@ -20,9 +25,15 @@ export default function Home() {
             <Pane width='100%' display='flex' flexDirection='column' alignItems='center'>
                 <Pane display='flex' flexDirection='column' alignItems='center' marginTop={48} marginX={32}>
                     <Intro />
-                    <ImageUpload marginTop={32}/>
+                    {
+                        uploaded ? 
+                        <Player images={images} setUploaded={setUploaded} /> : 
+                        <ImageUpload marginTop={32} setUploaded={setUploaded} files={images} setFiles={setImages} />
+                    }
                 </Pane>
             </Pane>
+    
+           
         </Pane>
     )
 }

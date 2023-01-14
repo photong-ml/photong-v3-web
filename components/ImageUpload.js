@@ -1,8 +1,7 @@
 import React from 'react';
-import { Pane, FileUploader, FileCard, } from 'evergreen-ui';
+import { Pane, FileUploader, FileCard, Button, MusicIcon } from 'evergreen-ui';
 
-export default function ImageUpload( {marginTop, } ) {
-    const [files, setFiles] = React.useState([])
+export default function ImageUpload( {marginTop, setUploaded, files, setFiles} ) {
     const [fileRejections, setFileRejections] = React.useState([])
     const handleChange = React.useCallback((files) => setFiles([files[0]]), [])
     const handleRejected = React.useCallback((fileRejections) => setFileRejections([fileRejections[0]]), [])
@@ -10,6 +9,17 @@ export default function ImageUpload( {marginTop, } ) {
         setFiles([])
         setFileRejections([])
     }, [])
+    const [loading, setLoading] = React.useState(false);
+
+    const handleSubmit = async () => {
+        setLoading(true);
+        // TODO: await submit to api
+        // TODO: handle error
+        // TODO: hand file to index.js
+        setLoading(false);
+        setUploaded(true);
+    }
+
     return (
         <Pane width='100%' marginTop={marginTop}>
             <FileUploader
@@ -25,15 +35,28 @@ export default function ImageUpload( {marginTop, } ) {
                     const fileRejection = fileRejections.find((fileRejection) => fileRejection.file === file)
                     const { message } = fileRejection || {}
                     return (
-                        <FileCard
-                            key={name}
-                            isInvalid={fileRejection != null}
-                            name={name}
-                            onRemove={handleRemove}
-                            sizeInBytes={size}
-                            type={type}
-                            validationMessage={message}
-                        />
+                        <Pane>
+                            <FileCard
+                                key={name}
+                                isInvalid={fileRejection != null}
+                                name={name}
+                                onRemove={handleRemove}
+                                sizeInBytes={size}
+                                type={type}
+                                validationMessage={message}
+                                src={URL.createObjectURL(file)}
+                            />
+                            <Button 
+                                onClick={handleSubmit} 
+                                isLoading={loading} 
+                                iconBefore={MusicIcon} 
+                                appearance="primary" 
+                                marginTop={16}
+                            >
+                                Generate music!
+                            </Button>
+                        </Pane> 
+                        
                     )
                 }}
                 values={files}
