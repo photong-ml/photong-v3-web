@@ -22,7 +22,8 @@ export default function ImageUpload( {marginTop, files, setFiles, generateAudio 
                 onRejected={handleRejected}
                 acceptedMimeTypes={["image/png", "image/jpeg", "image/webp"]}
                 renderFile={(file) => {
-                    const { name, size, type } = file
+                    let { name, size, type } = file
+                    if (name.length > 20) name = name.slice(0, 20) + '...' + name.slice(-4);
                     const fileRejection = fileRejections.find((fileRejection) => fileRejection.file === file)
                     const { message } = fileRejection || {}
                     return (
