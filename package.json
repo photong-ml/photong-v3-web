@@ -1,22 +1,26 @@
 {
-  "name": "photong-web",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "evergreen-ui": "^6.13.2",
-    "howler": "^2.2.3",
-    "next": "13.1.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "devDependencies": {
-    "eslint": "8.31.0",
-    "eslint-config-next": "13.1.1"
-  }
+    "name": "photong-web",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "format": "prettier --write . && next lint --fix"
+    },
+    "dependencies": {
+        "evergreen-ui": "^6.13.2",
+        "howler": "^2.2.3",
+        "next": "13.1.1",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
+    },
+    "devDependencies": {
+        "eslint": "8.31.0",
+        "eslint-config-next": "13.1.1",
+        "eslint-config-prettier": "^8.6.0",
+        "prettier": "^2.8.3"
+    },
+    "packageManager": "yarn@3.3.1"
 }

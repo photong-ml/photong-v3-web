@@ -1,18 +1,17 @@
 import React from 'react';
 import { Pane, FileUploader, FileCard, Button, MusicIcon } from 'evergreen-ui';
 
-export default function ImageUpload( {marginTop, files, setFiles, generateAudio } ) {
-    const [fileRejections, setFileRejections] = React.useState([])
-    const handleChange = React.useCallback((files) => setFiles([files[0]]), [])
-    const handleRejected = React.useCallback((fileRejections) => setFileRejections([fileRejections[0]]), [])
+export default function ImageUpload({ marginTop, files, setFiles, generateAudio }) {
+    const [fileRejections, setFileRejections] = React.useState([]);
+    const handleChange = React.useCallback((files) => setFiles([files[0]]), []);
+    const handleRejected = React.useCallback((fileRejections) => setFileRejections([fileRejections[0]]), []);
     const handleRemove = React.useCallback(() => {
-        setFiles([])
-        setFileRejections([])
-    }, [])
-
+        setFiles([]);
+        setFileRejections([]);
+    }, []);
 
     return (
-        <Pane width='100%' marginTop={marginTop}>
+        <Pane width="100%" marginTop={marginTop}>
             <FileUploader
                 label="Upload Image"
                 description="The image will be used to generate a soundtrack. Image can be up to 8MB."
@@ -20,12 +19,12 @@ export default function ImageUpload( {marginTop, files, setFiles, generateAudio 
                 maxFiles={1}
                 onChange={handleChange}
                 onRejected={handleRejected}
-                acceptedMimeTypes={["image/png", "image/jpeg", "image/webp"]}
+                acceptedMimeTypes={['image/png', 'image/jpeg', 'image/webp']}
                 renderFile={(file) => {
-                    let { name, size, type } = file
+                    let { name, size, type } = file;
                     if (name.length > 20) name = name.slice(0, 20) + '...' + name.slice(-4);
-                    const fileRejection = fileRejections.find((fileRejection) => fileRejection.file === file)
-                    const { message } = fileRejection || {}
+                    const fileRejection = fileRejections.find((fileRejection) => fileRejection.file === file);
+                    const { message } = fileRejection || {};
                     return (
                         <Pane>
                             <FileCard
@@ -38,20 +37,14 @@ export default function ImageUpload( {marginTop, files, setFiles, generateAudio 
                                 validationMessage={message}
                                 src={URL.createObjectURL(file)}
                             />
-                            <Button 
-                                onClick={generateAudio} 
-                                iconBefore={MusicIcon} 
-                                appearance="primary" 
-                                marginTop={16}
-                            >
+                            <Button onClick={generateAudio} iconBefore={MusicIcon} appearance="primary" marginTop={16}>
                                 Generate music!
                             </Button>
-                        </Pane> 
-                        
-                    )
+                        </Pane>
+                    );
                 }}
                 values={files}
             />
         </Pane>
-    )
+    );
 }
