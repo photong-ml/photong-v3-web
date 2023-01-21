@@ -1,9 +1,8 @@
 import React from "react";
 
 import { Button } from "evergreen-ui";
-import { useMsal } from "@azure/msal-react";
+import { useMsal, useIsAuthenticated } from "@azure/msal-react";
 import { loginRequest } from "../authConfig";
-import { useIsAuthenticated } from "@azure/msal-react";
 
 export default function LoginButton() {
     const { instance } = useMsal();
@@ -11,12 +10,14 @@ export default function LoginButton() {
 
     const handleLogin = () => {
         instance.loginRedirect(loginRequest).catch(e => {
+            // skipcq: JS-0002
             console.error(e);
         });
     }
 
     const handleLogout = () => {
         instance.logoutRedirect().catch(e => {
+            // skipcq: JS-0002
             console.error(e);
         });
     }

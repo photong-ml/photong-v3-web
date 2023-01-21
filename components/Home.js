@@ -32,10 +32,12 @@ export default function Home() {
     const generateAudio = async () => {
         // Generate music with a given image.
 
-        let nseed = Math.floor(Math.random() * 1000000);
-        let nalphaIndex = 0;
+        const nseed = Math.floor(Math.random() * 1000000);
+        const nalphaIndex = 0;
 
+        // skipcq: JS-0002
         console.log(`Generating audio seed ${nseed} alpha ${alphas[nalphaIndex]}`);
+
         setSeed(nseed);
         setAlphaIndex(nalphaIndex);
 
@@ -64,11 +66,12 @@ export default function Home() {
         // Add more 5-second segments based on the image/prompt already set.
 
         let nseed = seed;
-        let nalphaIndex = (alphaIndex + 1) % 4;
+        const nalphaIndex = (alphaIndex + 1) % 4;
         if (nalphaIndex === 0) nseed = seed + 1;
         setAlphaIndex(nalphaIndex);
         setSeed(nseed);
 
+        // skipcq: JS-0002
         console.log(`Extending audio prompt ${prompt} seed ${nseed} alpha ${alphas[nalphaIndex]}`);
 
         const res = await fetch(

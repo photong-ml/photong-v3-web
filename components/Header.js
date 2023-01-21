@@ -4,7 +4,7 @@ import React from 'react';
 import Logo from './Intro';
 import LoginButton from './LoginButton';
 
-import { Tab, Tablist, Pane, Heading, majorScale, Button } from 'evergreen-ui';
+import { Tab, Tablist, Pane, Heading, majorScale } from 'evergreen-ui';
 import { useRouter } from 'next/router';
 
 const Header = () => {
