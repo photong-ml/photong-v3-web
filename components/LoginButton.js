@@ -8,19 +8,19 @@ export default function LoginButton() {
     const { instance } = useMsal();
     const isAuthenticated = useIsAuthenticated();
 
-    function handleLogin() {
+    const handleLogin = React.useCallback(() => {
         instance.loginRedirect(loginRequest).catch((e) => {
             // skipcq: JS-0002
             console.error(e);
         });
-    }
+    })
 
-    function handleLogout() {
+    const handleLogout = React.useCallback(() => {
         instance.logoutRedirect().catch((e) => {
             // skipcq: JS-0002
             console.error(e);
         });
-    }
+    }, []);
 
     return isAuthenticated ? (
         <Button appearance="minimal" onClick={handleLogout}>

@@ -29,7 +29,7 @@ export default function Home() {
 
     Howler.volume(0.2);
 
-    async function generateAudio() {
+    const generateAudio = React.useCallback(async () => {
         // Generate music with a given image.
 
         const nseed = Math.floor(Math.random() * 1000000);
@@ -60,9 +60,9 @@ export default function Home() {
         setAudios([audio]);
         setCaption(data.caption);
         setPrompt(data.prompt);
-    }
+    }, [seed, alphaIndex, audios, images]);
 
-    async function extendAudio() {
+    const extendAudio = React.useCallback(async () => {
         // Add more 5-second segments based on the image/prompt already set.
 
         let nseed = seed;
@@ -92,11 +92,11 @@ export default function Home() {
         if (!uploaded) return;
         setAudios(resAudios);
         setLoading(false);
-    }
-
-    function clearAudios() {
+    }, [seed, alphaIndex, audios, prompt, uploaded]);
+    
+    const clearAudios = React.useCallback(() => {
         setAudios([]);
-    }
+    }, []);
 
     React.useEffect(() => {
         if (uploaded && audios.length > 0 && audios.length < MAX_FILES) extendAudio();
