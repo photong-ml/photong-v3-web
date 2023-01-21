@@ -13,7 +13,7 @@ export default function LoginButton() {
             // skipcq: JS-0002
             console.error(e);
         });
-    })
+    });
 
     const handleLogout = React.useCallback(() => {
         instance.logoutRedirect().catch((e) => {
