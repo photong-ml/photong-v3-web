@@ -5,6 +5,32 @@ __metadata:
   version: 6
   cacheKey: 8c0
 
+"@azure/msal-browser@npm:^2.32.2":
+  version: 2.32.2
+  resolution: "@azure/msal-browser@npm:2.32.2"
+  dependencies:
+    "@azure/msal-common": ^9.0.2
+  checksum: 75ba873a782bc2f4634ec8d3865b6dd102bb056dfcc8f74360a7526f30368d27c1d94ccf105e7d471523255a7519a20ac1a7a3030e83fbe0becaf836320ffe6f
+  languageName: node
+  linkType: hard
+
+"@azure/msal-common@npm:^9.0.2":
+  version: 9.1.1
+  resolution: "@azure/msal-common@npm:9.1.1"
+  checksum: ae06c97ab10b3fb7f2811ccc15f2f16a271ad9e47b7e3b2afd1956e72cf48e2c11dcc36876f1fcdb1774b0e511d13f8b81c7cf722634f7036f6f4c338e9bfd32
+  languageName: node
+  linkType: hard
+
+"@azure/msal-react@npm:^1.5.2":
+  version: 1.5.2
+  resolution: "@azure/msal-react@npm:1.5.2"
+  peerDependencies:
+    "@azure/msal-browser": ^2.32.2
+    react: ^16.8.0 || ^17 || ^18
+  checksum: cc4775341e9d06965aece9f5d80c565d74f582a7453255a15ac97a2eea670d85d1a0a3b5e0ef1306749d96da79321f319e88e59c23ee58bb079946d2fe9aaaf4
+  languageName: node
+  linkType: hard
+
 "@babel/runtime-corejs3@npm:^7.10.2":
   version: 7.20.7
   resolution: "@babel/runtime-corejs3@npm:7.20.7"
@@ -2372,6 +2398,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "photong-web@workspace:."
   dependencies:
+    "@azure/msal-browser": ^2.32.2
+    "@azure/msal-react": ^1.5.2
     eslint: 8.31.0
     eslint-config-next: 13.1.1
     eslint-config-prettier: ^8.6.0
