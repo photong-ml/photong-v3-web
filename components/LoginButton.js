@@ -8,14 +8,14 @@ export default function LoginButton() {
     const { instance } = useMsal();
     const isAuthenticated = useIsAuthenticated();
 
-    const handleLogin = () => {
+    function handleLogin() {
         instance.loginRedirect(loginRequest).catch((e) => {
             // skipcq: JS-0002
             console.error(e);
         });
     };
 
-    const handleLogout = () => {
+    function handleLogout() {
         instance.logoutRedirect().catch((e) => {
             // skipcq: JS-0002
             console.error(e);
