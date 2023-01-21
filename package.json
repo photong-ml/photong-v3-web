@@ -10,6 +10,8 @@
         "format": "prettier --write . && next lint --fix"
     },
     "dependencies": {
+        "@azure/msal-browser": "^2.32.2",
+        "@azure/msal-react": "^1.5.2",
         "evergreen-ui": "^6.13.2",
         "howler": "^2.2.3",
         "next": "13.1.1",

@@ -2,8 +2,9 @@
 
 import React from 'react';
 import Logo from './Intro';
+import LoginButton from './LoginButton';
 
-import { Tab, Tablist, Pane, Heading, majorScale } from 'evergreen-ui';
+import { Tab, Tablist, Pane, Heading, majorScale, Button } from 'evergreen-ui';
 import { useRouter } from 'next/router';
 
 const Header = () => {
@@ -17,14 +18,15 @@ const Header = () => {
         <Pane is="nav" position="sticky" top={0} display="flex" padding={16} background="tint1" zIndex={2}>
             <Pane flex={1} alignItems="center" display="flex">
                 <Heading marginRight={majorScale(3)}>Photong </Heading>
-                <Pane>
-                    <Tablist width="100%">
+                <Pane display='flex' width='100%' alignItems='center' justifyContent='space-between'>
+                    <Tablist>
                         {tabs.map(({ label, path, onSelect }, i) => (
                             <Tab isSelected={router.asPath === path} key={i} onSelect={onSelect}>
                                 {label}
                             </Tab>
                         ))}
                     </Tablist>
+                    <LoginButton />
                 </Pane>
             </Pane>
         </Pane>
