@@ -60,7 +60,7 @@ export default function Home() {
         setAudios([audio]);
         setCaption(data.caption);
         setPrompt(data.prompt);
-    };
+    }
 
     async function extendAudio() {
         // Add more 5-second segments based on the image/prompt already set.
@@ -92,7 +92,7 @@ export default function Home() {
         if (!uploaded) return;
         setAudios(resAudios);
         setLoading(false);
-    };
+    }
 
     function clearAudios() {
         setAudios([]);

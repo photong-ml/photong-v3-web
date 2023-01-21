@@ -13,14 +13,14 @@ export default function LoginButton() {
             // skipcq: JS-0002
             console.error(e);
         });
-    };
+    }
 
     function handleLogout() {
         instance.logoutRedirect().catch((e) => {
             // skipcq: JS-0002
             console.error(e);
         });
-    };
+    }
 
     return isAuthenticated ? (
         <Button appearance="minimal" onClick={handleLogout}>
