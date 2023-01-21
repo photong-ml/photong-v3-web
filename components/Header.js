@@ -7,7 +7,7 @@ import LoginButton from './LoginButton';
 import { Tab, Tablist, Pane, Heading, majorScale } from 'evergreen-ui';
 import { useRouter } from 'next/router';
 
-const Header = () => {
+export default function Header() {
     const router = useRouter();
     const tabs = [
         { label: 'Home', path: '/', onSelect: () => router.push('/') },
@@ -32,5 +32,3 @@ const Header = () => {
         </Pane>
     );
 };
-
-export default Header;
