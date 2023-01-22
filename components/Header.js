@@ -1,7 +1,6 @@
 // Modified version of header code from a previous project (ufds-training) used with author's permission.
 
 import React from 'react';
-import Logo from './Intro';
 import LoginButton from './LoginButton';
 
 import { Tab, Tablist, Pane, Heading, majorScale } from 'evergreen-ui';
