@@ -3,7 +3,7 @@
 import React from 'react';
 import LoginButton from './LoginButton';
 
-import { Tab, Tablist, Pane, /*Heading, majorScale*/ } from 'evergreen-ui';
+import { Tab, Tablist, Pane /*Heading, majorScale*/ } from 'evergreen-ui';
 import { useRouter } from 'next/router';
 
 export default function Header() {
