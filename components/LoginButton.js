@@ -28,7 +28,7 @@ export default function LoginButton() {
         <Pane display="flex" alignItems="center">
             {account && (
                 <Text size={300} marginRight={8}>
-                    Hello, {' '}
+                    Hello,{' '}
                     <Text size={300} fontWeight={600}>
                         {account.name}
                     </Text>
