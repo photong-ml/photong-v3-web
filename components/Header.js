@@ -9,8 +9,8 @@ import { useRouter } from 'next/router';
 export default function Header() {
     const router = useRouter();
     const tabs = [
-       // { label: 'Home', path: '/', onSelect: () => router.push('/') },
-       // { label: 'About', path: '/about', onSelect: () => router.push('/about') },
+        // { label: 'Home', path: '/', onSelect: () => router.push('/') },
+        // { label: 'About', path: '/about', onSelect: () => router.push('/about') },
     ];
 
     return (
