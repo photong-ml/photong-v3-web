@@ -26,7 +26,7 @@ export default function LoginButton() {
 
     return isAuthenticated ? (
         <Pane display='flex' alignItems='center'>
-            {account && <Text size={300} marginRight={8}>Signed in as <Text size={300} fontWeight={600}>{account.name}</Text></Text>}
+            {account && <Text size={300} marginRight={8}>Hello, <Text size={300} fontWeight={600}>{account.name}</Text>!</Text>}
             <Button appearance="minimal" onClick={handleLogout} isLoading={isLoading}>
                 Log out
             </Button>
