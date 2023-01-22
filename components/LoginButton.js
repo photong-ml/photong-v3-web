@@ -5,8 +5,9 @@ import { useMsal, useIsAuthenticated } from '@azure/msal-react';
 import { loginRequest } from '../authConfig';
 
 export default function LoginButton() {
-    const { instance } = useMsal();
+    const { instance, inProgress } = useMsal();
     const isAuthenticated = useIsAuthenticated();
+    const isLoading = (inProgress !== 'none');
 
     const handleLogin = React.useCallback(() => {
         instance.loginRedirect(loginRequest).catch((e) => {
@@ -23,11 +24,11 @@ export default function LoginButton() {
     }, []);
 
     return isAuthenticated ? (
-        <Button appearance="minimal" onClick={handleLogout}>
+        <Button appearance="minimal" onClick={handleLogout} isLoading={isLoading}>
             Log out
         </Button>
     ) : (
-        <Button appearance="primary" onClick={handleLogin}>
+        <Button appearance="primary" onClick={handleLogin} isLoading={isLoading}>
             Log in
         </Button>
     );
