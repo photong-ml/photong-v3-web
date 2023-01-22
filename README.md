@@ -1,4 +1,5 @@
 # Photong Web App
+
 This is a Next.js frontend for the Photong project.
 
 ## Getting Started
