@@ -93,7 +93,7 @@ export default function Home() {
         setAudios(resAudios);
         setLoading(false);
     }, [seed, alphaIndex, audios, prompt, uploaded]);
-    
+
     const clearAudios = React.useCallback(() => {
         setAudios([]);
     }, []);
