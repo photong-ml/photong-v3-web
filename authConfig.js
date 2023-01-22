@@ -21,7 +21,7 @@ export const msalConfig = {
         clientId: '5c64cf4f-5a01-4917-a2c5-e9a13de15f65',
         authority: b2cPolicies.authorities.signUpSignIn.authority,
         knownAuthorities: [b2cPolicies.authorityDomain],
-        redirectUri: 'http://localhost:3000',
+        redirectUri: '/',
     },
     cache: {
         cacheLocation: 'sessionStorage', // This configures where your cache will be stored
