@@ -13,7 +13,7 @@ function Intro() {
                     BETA
                 </Heading>
             </Pane>
-            <Heading size={500} marginTop={5}>
+            <Heading size={500} fontWeight={550} marginTop={5}>
                 Photong uses machine learning to generate soundtracks from images.
             </Heading>
         </Pane>

@@ -29,6 +29,8 @@ export default class MyDocument extends Document {
             <Html lang="en">
                 <Head>
                     <style dangerouslySetInnerHTML={{ __html: css }} />
+                    <link rel="preconnect" href="https://rsms.me/" />
+                    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
                 </Head>
 
                 <body>
