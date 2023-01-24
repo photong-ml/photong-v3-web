@@ -19,7 +19,7 @@ export default function ImageUpload({ marginTop, files, setFiles, generateAudio 
             <Pane>
                 <FileCard
                     key={name}
-                    isInvalid={!!fileRejection}
+                    isInvalid={Boolean(fileRejection)}
                     name={name}
                     onRemove={handleRemove}
                     sizeInBytes={size}
