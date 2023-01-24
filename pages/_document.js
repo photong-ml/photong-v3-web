@@ -26,7 +26,7 @@ export default class MyDocument extends Document {
         const { css, hydrationScript } = this.props;
 
         return (
-            <Html>
+            <Html lang="en">
                 <Head>
                     <style dangerouslySetInnerHTML={{ __html: css }} />
                 </Head>
