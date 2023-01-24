@@ -13,7 +13,7 @@
         "@azure/msal-browser": "^2.32.2",
         "@azure/msal-react": "^1.5.2",
         "critters": "^0.0.16",
-        "evergreen-ui": "^6.13.2",
+        "evergreen-ui": "^7.0.1",
         "howler": "^2.2.3",
         "next": "13.1.5",
         "react": "18.2.0",
