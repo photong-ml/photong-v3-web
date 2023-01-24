@@ -65,11 +65,10 @@ export default function Home() {
             setPrompt(data.prompt);
         } catch (e) {
             toaster.danger('Error generating audio. Please try again.', {
-                description: `${e.message}`
+                description: `${e.message}`,
             });
             setLoading(false);
         }
-        
     }, [seed, alphaIndex, audios, images]);
 
     const extendAudio = React.useCallback(async () => {
@@ -107,11 +106,10 @@ export default function Home() {
             setLoading(false);
         } catch (e) {
             toaster.danger('Error generating audio. Please try again.', {
-                description: `${e.name}: ${e.message}`
+                description: `${e.name}: ${e.message}`,
             });
             setLoading(false);
         }
-        
     }, [seed, alphaIndex, audios, prompt, uploaded]);
 
     const clearAudios = React.useCallback(() => {
