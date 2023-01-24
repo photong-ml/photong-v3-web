@@ -7,9 +7,10 @@ export default function Player({ images, setUploaded, audios, clearAudios, index
 
     React.useEffect(() => {
         setBgImageURL(URL.createObjectURL(images[0]));
-    }, []);
+    }, [images]);
 
-    const playAudio = () => {
+    const playAudio = React.useCallback(() => {
+        // skipcq: JS-0002
         console.log(`Playing audio index ${index}`);
         audios[index].play();
 
@@ -18,24 +19,25 @@ export default function Player({ images, setUploaded, audios, clearAudios, index
         audios[index].on('end', () => {
             setIndex(index + 1);
         });
-    };
+    }, [audios, index]);
 
     React.useEffect(() => {
         if (playing) playAudio();
     }, [index]);
 
-    const pauseAudio = () => {
+    const pauseAudio = React.useCallback(() => {
+        // skipcq: JS-0002
         console.log(`Pausing audio index ${index}`);
         audios[index].pause();
         setPlaying(false);
-    };
+    }, [audios, index]);
 
-    const exitPlayer = () => {
+    const exitPlayer = React.useCallback(() => {
         audios[index].stop();
         clearAudios();
         setIndex(0);
         setUploaded(false);
-    };
+    }, [audios, index]);
 
     return (
         <Pane width="100%" marginTop={32}>
