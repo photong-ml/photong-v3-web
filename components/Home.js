@@ -30,6 +30,7 @@ export default function Home() {
     Howler.volume(0.2);
 
     const generateAudio = React.useCallback(async () => {
+        console.log(images);
         // Generate music with a given image.
 
         const nseed = Math.floor(Math.random() * 1000000);
