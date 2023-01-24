@@ -1,17 +1,19 @@
-// Modified version of header code from a previous project (ufds-training) used with author's permission.
+// Modified version of header code from a previous project (ufds-training) used
+// with author's permission.
 
+import {Pane /*Heading, majorScale*/, Tab, Tablist} from 'evergreen-ui';
+import {useRouter} from 'next/router';
 import React from 'react';
+
 import LoginButton from './LoginButton';
 
-import { Tab, Tablist, Pane /*Heading, majorScale*/ } from 'evergreen-ui';
-import { useRouter } from 'next/router';
-
 export default function Header() {
-    const router = useRouter();
-    const tabs = [
-        // { label: 'Home', path: '/', onSelect: () => router.push('/') },
-        // { label: 'About', path: '/about', onSelect: () => router.push('/about') },
-    ];
+  const router = useRouter();
+  const tabs = [
+    // { label: 'Home', path: '/', onSelect: () => router.push('/') },
+    // { label: 'About', path: '/about', onSelect: () => router.push('/about')
+    // },
+  ];
 
     return (
         <Pane is="nav" position="sticky" top={0} display="flex" padding={16} background="tint1" zIndex={2}>
