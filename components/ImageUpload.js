@@ -10,29 +10,32 @@ export default function ImageUpload({ marginTop, files, setFiles, generateAudio 
         setFileRejections([]);
     }, []);
 
-    const handleRender = React.useCallback((file) => {
-        let { name, size, type } = file;
-        if (name.length > 20) name = `${name.slice(0, 20)}...${name.slice(-4)}`;
-        const fileRejection = fileRejections.find((fr) => fr.file === file);
-        const { message } = fileRejection || {};
-        return (
-            <Pane>
-                <FileCard
-                    key={name}
-                    isInvalid={Boolean(fileRejection)}
-                    name={name}
-                    onRemove={handleRemove}
-                    sizeInBytes={size}
-                    type={type}
-                    validationMessage={message}
-                    src={URL.createObjectURL(file)}
-                />
-                <Button onClick={generateAudio} iconBefore={MusicIcon} appearance="primary" marginTop={16}>
-                    Generate music!
-                </Button>
-            </Pane>
-        );
-    }, [fileRejections, files]);
+    const handleRender = React.useCallback(
+        (file) => {
+            let { name, size, type } = file;
+            if (name.length > 20) name = `${name.slice(0, 20)}...${name.slice(-4)}`;
+            const fileRejection = fileRejections.find((fr) => fr.file === file);
+            const { message } = fileRejection || {};
+            return (
+                <Pane>
+                    <FileCard
+                        key={name}
+                        isInvalid={Boolean(fileRejection)}
+                        name={name}
+                        onRemove={handleRemove}
+                        sizeInBytes={size}
+                        type={type}
+                        validationMessage={message}
+                        src={URL.createObjectURL(file)}
+                    />
+                    <Button onClick={generateAudio} iconBefore={MusicIcon} appearance="primary" marginTop={16}>
+                        Generate music!
+                    </Button>
+                </Pane>
+            );
+        },
+        [fileRejections, files],
+    );
 
     return (
         <Pane width="100%" marginTop={marginTop}>
