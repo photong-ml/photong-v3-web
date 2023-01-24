@@ -21,6 +21,7 @@ jobs:
       - name: Set yarn version and build
         run: |
           yarn set version stable
+          yarn install
           yarn run build
       - name: Build And Deploy
         id: builddeploy
