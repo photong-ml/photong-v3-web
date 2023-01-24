@@ -1,6 +1,5 @@
+import {Heading, Pane, Text} from 'evergreen-ui';
 import React from 'react';
-
-import { Pane, Heading, Text } from 'evergreen-ui';
 
 function Intro() {
     return (
