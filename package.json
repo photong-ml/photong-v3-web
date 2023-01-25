@@ -1,29 +1,29 @@
 {
-    "name": "photong-web",
-    "version": "0.1.0",
-    "private": true,
-    "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "lint": "next lint",
-        "format": "prettier --write . && next lint --fix"
-    },
-    "dependencies": {
-        "@azure/msal-browser": "^2.32.2",
-        "@azure/msal-react": "^1.5.2",
-        "critters": "^0.0.16",
-        "evergreen-ui": "^6.13.2",
-        "howler": "^2.2.3",
-        "next": "13.1.5",
-        "react": "18.2.0",
-        "react-dom": "18.2.0"
-    },
-    "devDependencies": {
-        "eslint": "8.32.0",
-        "eslint-config-next": "13.1.5",
-        "eslint-config-prettier": "^8.6.0",
-        "prettier": "^2.8.3"
-    },
-    "packageManager": "yarn@3.3.1"
+  "name": "photong-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write . && next lint --fix"
+  },
+  "dependencies": {
+    "@azure/msal-browser": "^2.32.2",
+    "@azure/msal-react": "^1.5.2",
+    "critters": "^0.0.16",
+    "evergreen-ui": "^6.13.2",
+    "howler": "^2.2.3",
+    "next": "13.1.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "8.32.0",
+    "eslint-config-next": "13.1.5",
+    "eslint-config-prettier": "^8.6.0",
+    "prettier": "^2.8.3"
+  },
+  "packageManager": "yarn@3.3.1"
 }
