@@ -12,12 +12,20 @@ export default function Player({ images, setUploaded, audios, clearAudios, index
     const playAudio = React.useCallback(() => {
         // skipcq: JS-0002
         console.log(`Playing audio index ${index}`);
-        audios[index].play();
+
+        let nindex = index;
+
+        if (index >= audios.length) {
+            // No more audio to play, loop back to beginning
+            nindex = 0;
+        }
+
+        audios[nindex].play();
 
         setPlaying(true);
 
-        audios[index].on('end', () => {
-            setIndex(index + 1);
+        audios[nindex].on('end', () => {
+            setIndex(nindex + 1);
         });
     }, [audios, index]);
 
