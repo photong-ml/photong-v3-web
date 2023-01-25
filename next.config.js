@@ -5,10 +5,6 @@ const nextConfig = {
         // runtime: 'experimental-edge',
         optimizeCss: true,
     },
-    i18n: {
-        locales: ['en'],
-        defaultLocale: 'en',
-    },
 };
 
 module.exports = nextConfig;

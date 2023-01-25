@@ -26,7 +26,7 @@ export default class MyDocument extends Document {
         const { css, hydrationScript } = this.props;
 
         return (
-            <Html lang="en">
+            <Html>
                 <Head>
                     <style dangerouslySetInnerHTML={{ __html: css }} />
                     <link rel="preconnect" href="https://rsms.me/" />
