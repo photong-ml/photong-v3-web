@@ -9,7 +9,7 @@ import Loading from './Loading';
 
 import config from '../config.json';
 
-import { Pane, toaster } from 'evergreen-ui';
+import { Pane } from 'evergreen-ui';
 import { Howl, Howler } from 'howler';
 
 export default function Home() {
@@ -30,86 +30,68 @@ export default function Home() {
     Howler.volume(0.2);
 
     const generateAudio = React.useCallback(async () => {
-        try {
-            // Generate music with a given image.
+        // Generate music with a given image.
 
-            const nseed = Math.floor(Math.random() * 1000000);
-            const nalphaIndex = 0;
+        const nseed = Math.floor(Math.random() * 1000000);
+        const nalphaIndex = 0;
 
-            // skipcq: JS-0002
-            console.log(`Generating audio seed ${nseed} alpha ${alphas[nalphaIndex]}`);
+        // skipcq: JS-0002
+        console.log(`Generating audio seed ${nseed} alpha ${alphas[nalphaIndex]}`);
 
-            setSeed(nseed);
-            setAlphaIndex(nalphaIndex);
+        setSeed(nseed);
+        setAlphaIndex(nalphaIndex);
 
-            setLoading(true);
+        setLoading(true);
 
-            const formData = new FormData();
-            formData.append('file', images[0]);
+        const formData = new FormData();
+        formData.append('file', images[0]);
 
-            const res = await fetch(`${config.API_URL}/infer?seed_img=${seedImg}&seed=${seed}&alpha=${alphas[nalphaIndex]}`, {
-                method: 'POST',
-                body: formData,
-            });
+        const res = await fetch(`${config.API_URL}/infer?seed_img=${seedImg}&seed=${seed}&alpha=${alphas[nalphaIndex]}`, {
+            method: 'POST',
+            body: formData,
+        });
 
-            if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+        const data = await res.json();
+        const audio = new Howl({
+            src: [data.audio],
+        });
 
-            const data = res.ok ? await res.json() : Promise.reject(res);
-            const audio = new Howl({
-                src: [data.audio],
-            });
-
-            setUploaded(true);
-            setAudios([audio]);
-            setCaption(data.caption);
-            setPrompt(data.prompt);
-        } catch (e) {
-            toaster.danger('Error generating audio. Please try again.', {
-                description: `${e.message}`,
-            });
-            setLoading(false);
-        }
+        setUploaded(true);
+        setAudios([audio]);
+        setCaption(data.caption);
+        setPrompt(data.prompt);
     }, [seed, alphaIndex, audios, images]);
 
     const extendAudio = React.useCallback(async () => {
-        try {
-            // Add more 5-second segments based on the image/prompt already set.
+        // Add more 5-second segments based on the image/prompt already set.
 
-            let nseed = seed;
-            const nalphaIndex = (alphaIndex + 1) % 4;
-            if (nalphaIndex === 0) nseed = seed + 1;
-            setAlphaIndex(nalphaIndex);
-            setSeed(nseed);
+        let nseed = seed;
+        const nalphaIndex = (alphaIndex + 1) % 4;
+        if (nalphaIndex === 0) nseed = seed + 1;
+        setAlphaIndex(nalphaIndex);
+        setSeed(nseed);
 
-            // skipcq: JS-0002
-            console.log(`Extending audio prompt ${prompt} seed ${nseed} alpha ${alphas[nalphaIndex]}`);
+        // skipcq: JS-0002
+        console.log(`Extending audio prompt ${prompt} seed ${nseed} alpha ${alphas[nalphaIndex]}`);
 
-            const res = await fetch(
-                `${config.API_URL}/infer/with-prompt?seed_img=${seedImg}&seed=${nseed}&prompt=${prompt}&alpha=${alphas[nalphaIndex]}`,
-                {
-                    method: 'POST',
-                },
-            );
+        const res = await fetch(
+            `${config.API_URL}/infer/with-prompt?seed_img=${seedImg}&seed=${nseed}&prompt=${prompt}&alpha=${alphas[nalphaIndex]}`,
+            {
+                method: 'POST',
+            },
+        );
+        const data = await res.json();
 
-            if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+        const resAudios = [...audios];
+        resAudios.push(
+            new Howl({
+                src: [data.audio],
+            }),
+        );
 
-            const data = await res.json();
-            const resAudios = [...audios];
-            resAudios.push(
-                new Howl({
-                    src: [data.audio],
-                }),
-            );
-
-            if (!uploaded) return;
-            setAudios(resAudios);
-            setLoading(false);
-        } catch (e) {
-            toaster.danger('Error generating audio. Please try again.', {
-                description: `${e.name}: ${e.message}`,
-            });
-            setLoading(false);
-        }
+        if (!uploaded) return;
+        setAudios(resAudios);
+        setLoading(false);
     }, [seed, alphaIndex, audios, prompt, uploaded]);
 
     const clearAudios = React.useCallback(() => {

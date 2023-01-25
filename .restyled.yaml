@@ -1,4 +1,0 @@
-restylers:
-    - clang-format:
-          enabled: false
-    - '*'

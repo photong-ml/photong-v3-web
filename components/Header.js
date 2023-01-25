@@ -19,8 +19,8 @@ export default function Header() {
                 {/*<Heading marginRight={majorScale(3)}>Photong </Heading>*/}
                 <Pane display="flex" width="100%" alignItems="center" justifyContent="space-between">
                     <Tablist>
-                        {tabs.map(({ label, path, onSelect }) => (
-                            <Tab isSelected={router.asPath === path} key={label} onSelect={onSelect}>
+                        {tabs.map(({ label, path, onSelect }, i) => (
+                            <Tab isSelected={router.asPath === path} key={i} onSelect={onSelect}>
                                 {label}
                             </Tab>
                         ))}

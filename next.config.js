@@ -2,12 +2,8 @@
 const nextConfig = {
     reactStrictMode: true,
     experimental: {
-        runtime: 'experimental-edge',
+        // runtime: 'experimental-edge',
         optimizeCss: true,
-    },
-    i18n: {
-        locales: ['en'],
-        defaultLocale: 'en',
     },
 };
 
