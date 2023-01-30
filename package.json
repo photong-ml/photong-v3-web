@@ -15,7 +15,7 @@
         "critters": "^0.0.16",
         "evergreen-ui": "^7.0.1",
         "howler": "^2.2.3",
-        "next": "13.1.5",
+        "next": "13.1.6",
         "react": "18.2.0",
         "react-dom": "18.2.0",
         "react-is": "^18.2.0"
