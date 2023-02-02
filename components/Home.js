@@ -9,7 +9,7 @@ import Loading from './Loading';
 
 import config from '../config.json';
 
-import { Pane, toaster } from 'evergreen-ui';
+import { Pane, Heading, Link, Image, toaster } from 'evergreen-ui';
 import { Howl, Howler } from 'howler';
 
 export default function Home() {
@@ -148,6 +148,12 @@ export default function Home() {
                     ) : (
                         <ImageUpload marginTop={32} files={images} setFiles={setImages} generateAudio={generateAudio} />
                     )}
+                </Pane>
+                <Pane marginTop={64} marginBottom={16} display='flex' flexDirection='column' alignItems='center'>
+                    <Heading size={100} marginBottom={4} fontWeight={400}>Created by the Photong team.</Heading>
+                        <Link height={16} marginTop={8} href="https://status.photong.ml" target="_blank" rel="noopener noreferrer">
+                            <Image height={16} src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/photong-ml/photong-status/master/api/photong-v3-api/uptime-day.json" alt="Uptime status" />
+                        </Link>
                 </Pane>
             </Pane>
         </Pane>
