@@ -308,17 +308,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^16.9.5":
-  version: 16.14.34
-  resolution: "@types/react@npm:16.14.34"
-  dependencies:
-    "@types/prop-types": "*"
-    "@types/scheduler": "*"
-    csstype: ^3.0.2
-  checksum: 0cc204f87badeabd4641beb415e82b574152596e65304f5e63cd41948b23036f3e7ae658a86aa5357c2ab4f0f4f9402dfd5077c3df0c5294130a45d92add9bac
-  languageName: node
-  linkType: hard
-
 "@types/scheduler@npm:*":
   version: 0.16.2
   resolution: "@types/scheduler@npm:0.16.2"
@@ -1248,13 +1237,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"evergreen-ui@npm:^7.0.1":
-  version: 7.0.1
-  resolution: "evergreen-ui@npm:7.0.1"
+"evergreen-ui@npm:^7.1.1":
+  version: 7.1.1
+  resolution: "evergreen-ui@npm:7.1.1"
   dependencies:
     "@babel/runtime": ^7.1.2
     "@segment/react-tiny-virtual-list": ^2.2.1
-    "@types/react": ^16.9.5
     "@types/react-transition-group": ^4.4.0
     arrify: ^1.0.1
     downshift: ^5.2.0
@@ -1275,7 +1263,7 @@ __metadata:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-is: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 6a9915ef2db1f6e7230b756bd0cfdcbb5e77a78febec687c9b5fbd7245c6d1b2a12fd5ff3d75d38f8e8472dd9e14874667489b32cff5c1e3b69f1fd1c5b2a67e
+  checksum: a0daa6f2e65ba6482d122cfc2c46ba03642d9f1d9c8ff2a898c4ff5d1775c3d9de023365854525e11ef00a42eef2b2d63e7d18fd3afcfccc923570f2acd00d23
   languageName: node
   linkType: hard
 
@@ -2402,7 +2390,7 @@ __metadata:
     eslint: 8.33.0
     eslint-config-next: 13.1.6
     eslint-config-prettier: ^8.6.0
-    evergreen-ui: ^7.0.1
+    evergreen-ui: ^7.1.1
     howler: ^2.2.3
     next: 13.1.6
     prettier: ^2.8.3
