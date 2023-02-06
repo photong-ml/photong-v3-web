@@ -15,14 +15,14 @@
         "critters": "^0.0.16",
         "evergreen-ui": "^7.0.1",
         "howler": "^2.2.3",
-        "next": "13.1.5",
+        "next": "13.1.6",
         "react": "18.2.0",
         "react-dom": "18.2.0",
         "react-is": "^18.2.0"
     },
     "devDependencies": {
-        "eslint": "8.32.0",
-        "eslint-config-next": "13.1.5",
+        "eslint": "8.33.0",
+        "eslint-config-next": "13.1.6",
         "eslint-config-prettier": "^8.6.0",
         "prettier": "^2.8.3"
     },
