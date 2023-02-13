@@ -21,13 +21,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@azure/msal-react@npm:^1.5.2":
-  version: 1.5.2
-  resolution: "@azure/msal-react@npm:1.5.2"
+"@azure/msal-react@npm:^1.5.3":
+  version: 1.5.3
+  resolution: "@azure/msal-react@npm:1.5.3"
   peerDependencies:
-    "@azure/msal-browser": ^2.32.2
+    "@azure/msal-browser": ^2.33.0
     react: ^16.8.0 || ^17 || ^18
-  checksum: cc4775341e9d06965aece9f5d80c565d74f582a7453255a15ac97a2eea670d85d1a0a3b5e0ef1306749d96da79321f319e88e59c23ee58bb079946d2fe9aaaf4
+  checksum: 42c5a03bc6971ffcc7a985c1358772965616e907b90931b05fd4d2e61b4a22ea9dec1d2016de1c668cdd4e30f11bae26b5db31a24704ae021ccc953b8cdac2f6
   languageName: node
   linkType: hard
 
@@ -2385,7 +2385,7 @@ __metadata:
   resolution: "photong-web@workspace:."
   dependencies:
     "@azure/msal-browser": ^2.32.2
-    "@azure/msal-react": ^1.5.2
+    "@azure/msal-react": ^1.5.3
     critters: ^0.0.16
     eslint: 8.33.0
     eslint-config-next: 13.1.6
