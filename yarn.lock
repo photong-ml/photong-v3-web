@@ -1237,9 +1237,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"evergreen-ui@npm:^7.1.3":
-  version: 7.1.3
-  resolution: "evergreen-ui@npm:7.1.3"
+"evergreen-ui@npm:^7.1.4":
+  version: 7.1.4
+  resolution: "evergreen-ui@npm:7.1.4"
   dependencies:
     "@babel/runtime": ^7.1.2
     "@segment/react-tiny-virtual-list": ^2.2.1
@@ -1263,7 +1263,7 @@ __metadata:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-is: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: e6e8b70721266a4c3603ab5c0c8bc8ab4eb6e6de83b1113a40a271840dc4433971be95a13524369fc2ef917a3562e414d09d964e78d8b8861b1c8ff3dab04720
+  checksum: acef439139c3ccb7284af38fb2c30aecf665fbd2f4c958eb648667e9c93a83c949a566ec909dd97f6c8db6af46d046997f3cea350ca8db74b923c491460bc732
   languageName: node
   linkType: hard
 
@@ -2390,7 +2390,7 @@ __metadata:
     eslint: 8.34.0
     eslint-config-next: 13.1.6
     eslint-config-prettier: ^8.6.0
-    evergreen-ui: ^7.1.3
+    evergreen-ui: ^7.1.4
     howler: ^2.2.3
     next: 13.1.6
     prettier: ^2.8.4
