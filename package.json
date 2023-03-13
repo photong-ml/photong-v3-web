@@ -21,7 +21,7 @@
         "react-is": "^18.2.0"
     },
     "devDependencies": {
-        "eslint": "8.35.0",
+        "eslint": "8.36.0",
         "eslint-config-next": "13.2.3",
         "eslint-config-prettier": "^8.7.0",
         "prettier": "^2.8.4"
