@@ -11,7 +11,7 @@
     },
     "dependencies": {
         "@azure/msal-browser": "^2.33.0",
-        "@azure/msal-react": "^1.5.3",
+        "@azure/msal-react": "^1.5.4",
         "critters": "^0.0.16",
         "evergreen-ui": "^7.1.4",
         "howler": "^2.2.3",
